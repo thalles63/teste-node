@@ -5,9 +5,10 @@ var express = require('express'),
   Task = require('./api/models/todoListModel'), //created model loading here
   bodyParser = require('body-parser');
   
+const uri = process.env.MONGODB_API;
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb+srv://thalles:guitarra@db-teste.rlfbs.mongodb.net/todobd?retryWrites=true&w=majority'); 
+mongoose.connect(uri); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
